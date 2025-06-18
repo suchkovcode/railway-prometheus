@@ -17,7 +17,7 @@ scrape_configs:
     scrape_interval: 60s
     static_configs:
       # Замените на ваше внутреннее имя сервиса Railway
-      - targets: ['empowering-love.railway.internal:8055']
+      - targets: ['http://empowering-love.railway.internal:8080']
     metrics_path: '/metrics'
     authorization:
       type: 'Metrics'
