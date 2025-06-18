@@ -22,10 +22,10 @@ scrape_configs:
       credentials: 'BMHx7HZo8GA1jlEP1oT8y6-hW7IFBrpz'
 
   # Astro.js сайт с кастомными метриками
-  - job_name: 'astro-site'
+  - job_name: 'astro'
     scrape_interval: 30s
     static_configs:
       - targets: ['new.railway.internal:8080'] 
     metrics_path: '/api/metrics'
     scheme: 'http' 
-    scrape_timeout: 10s 
+    scrape_timeout: 10s
