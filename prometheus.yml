@@ -28,4 +28,4 @@ scrape_configs:
       - targets: ['new.railway.internal:8080'] 
     metrics_path: '/api/metrics'
     scheme: 'http' 
-    scrape_timeout: 10s
+    scrape_timeout: 10s 
