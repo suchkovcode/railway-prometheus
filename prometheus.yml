@@ -28,6 +28,12 @@ scrape_configs:
     metrics_path: '/metrics'
     scheme: 'http' 
 
+  - job_name: 'cloudflare'
+    scrape_interval: 300s
+    static_configs:
+      - targets: ['cloudflare_exporter.railway.internal:8080']
+    metrics_path: '/metrics'
+    scheme: 'http' 
 
   # Directus с встроенными метриками (включая PostgreSQL и Redis)
   - job_name: 'directus'
