@@ -3,11 +3,13 @@ FROM prom/prometheus:latest
 # Копируем конфигурацию Prometheus
 COPY prometheus.yml /etc/prometheus/prometheus.yml
 
-# Создаем директории для данных
+# Создаем директории для данных и устанавливаем правильные права
 USER root
-RUN mkdir -p /prometheus
+RUN mkdir -p /prometheus && \
+    chown -R nobody:nobody /prometheus && \
+    chmod -R 755 /prometheus
 
-# Возвращаемся к пользователю prometheus
+# Возвращаемся к пользователю nobody
 USER nobody
 
 # Открываем порт
