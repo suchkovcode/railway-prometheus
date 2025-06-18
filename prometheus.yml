@@ -12,6 +12,14 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9090']
 
+  # PostgreSQL метрики
+  - job_name: 'postgres'
+    scrape_interval: 30s
+    static_configs:
+      - targets: ['postgres-metrics-collector.railway.internal:9187']
+    metrics_path: '/metrics'
+    scheme: 'http'
+
   # Directus с встроенными метриками (включая PostgreSQL и Redis)
   - job_name: 'directus'
     scrape_interval: 60s
