@@ -25,9 +25,9 @@ scrape_configs:
   - job_name: 'astro'
     scrape_interval: 60s
     static_configs:
-      - targets: ['new.railway.internal:8080']
+      - targets: ['daloras.com']
     metrics_path: '/api/metrics'
-    scheme: 'http'
+    scheme: 'https'
     scrape_timeout: 10s
     params:
       method: ['POST']
