@@ -18,5 +18,5 @@ scrape_configs:
     static_configs:
       - targets: ['empowering-love.railway.internal:8080']
     metrics_path: '/metrics'
-    headers:
-      Authorization: 'Metrics BMHx7HZo8GA1jlEP1oT8y6-hW7IFBrpz'
+    authorization:
+      credentials: 'BMHx7HZo8GA1jlEP1oT8y6-hW7IFBrpz'
