@@ -22,12 +22,11 @@ scrape_configs:
 
   # Redis метрики через redis_exporter
   - job_name: 'redis'
-    scrape_interval: 30s
+    scrape_interval: 60s
     static_configs:
       - targets: ['redis-metrics-collector.railway.internal:9121']
     metrics_path: '/metrics'
     scheme: 'http' 
-    scrape_timeout: 60s
 
 
   # Directus с встроенными метриками (включая PostgreSQL и Redis)
