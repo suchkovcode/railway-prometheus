@@ -23,9 +23,11 @@ scrape_configs:
 
   # Astro.js сайт с кастомными метриками
   - job_name: 'astro'
-    scrape_interval: 30s
+    scrape_interval: 60s
     static_configs:
-      - targets: ['new.railway.internal:8080'] 
+      - targets: ['new.railway.internal:8080']
     metrics_path: '/api/metrics'
-    scheme: 'http' 
+    scheme: 'http'
     scrape_timeout: 10s
+    params:
+      method: ['POST']
