@@ -8,13 +8,13 @@ global:
 scrape_configs:
   # Prometheus самомониторинг
   - job_name: 'prometheus'
-    scrape_interval: 15s
+    scrape_interval: 60s
     static_configs:
       - targets: ['localhost:9090']
 
   # PostgreSQL метрики
   - job_name: 'postgres'
-    scrape_interval: 30s
+    scrape_interval: 60s
     static_configs:
       - targets: ['postgres-metrics-collector.railway.internal:9187']
     metrics_path: '/metrics'
