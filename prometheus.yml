@@ -1,3 +1,5 @@
+
+
 global:
   scrape_interval: 15s
   evaluation_interval: 15s
@@ -9,12 +11,14 @@ scrape_configs:
   # Prometheus самомониторинг
   - job_name: 'prometheus'
     scrape_interval: 60s
+    scrape_timeout: 10s
     static_configs:
       - targets: ['localhost:9090']
 
   # PostgreSQL метрики
   - job_name: 'postgres'
     scrape_interval: 60s
+    scrape_timeout: 10s
     static_configs:
       - targets: ['postgres-metrics-collector.railway.internal:9187']
     metrics_path: '/metrics'
@@ -23,6 +27,7 @@ scrape_configs:
   # Redis метрики через redis_exporter
   - job_name: 'redis'
     scrape_interval: 60s
+    scrape_timeout: 10s
     static_configs:
       - targets: ['redis-metrics-collector.railway.internal:9121']
     metrics_path: '/metrics'
@@ -30,6 +35,7 @@ scrape_configs:
 
   - job_name: 'cloudflare'
     scrape_interval: 300s
+    scrape_timeout: 30s
     static_configs:
       - targets: ['cloudflare_exporter.railway.internal:8080']
     metrics_path: '/metrics'
@@ -38,6 +44,7 @@ scrape_configs:
   # Directus с встроенными метриками (включая PostgreSQL и Redis)
   - job_name: 'directus'
     scrape_interval: 60s
+    scrape_timeout: 10s
     static_configs:
       - targets: ['empowering-love.railway.internal:8080']
     metrics_path: '/metrics'
@@ -47,10 +54,10 @@ scrape_configs:
   # Astro.js сайт с кастомными метриками
   - job_name: 'astro'
     scrape_interval: 60s
+    scrape_timeout: 10s
     static_configs:
       - targets: ['daloras.com']
     metrics_path: '/api/metrics'
     scheme: 'https'
-    scrape_timeout: 10s
     params:
       method: ['POST']
