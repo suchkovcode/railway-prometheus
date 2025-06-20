@@ -20,7 +20,7 @@ scrape_configs:
     scrape_interval: 60s
     scrape_timeout: 10s
     static_configs:
-      - targets: ['postgres-metrics-collector.railway.internal:9187']
+      - targets: ['postgres-exporter.railway.internal:9187']
     metrics_path: '/metrics'
     scheme: 'http'
 
@@ -29,7 +29,7 @@ scrape_configs:
     scrape_interval: 60s
     scrape_timeout: 10s
     static_configs:
-      - targets: ['redis-metrics-collector.railway.internal:9121']
+      - targets: ['redis-exporter.railway.internal:9121']
     metrics_path: '/metrics'
     scheme: 'http' 
 
