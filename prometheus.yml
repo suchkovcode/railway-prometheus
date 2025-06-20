@@ -46,18 +46,18 @@ scrape_configs:
     scrape_interval: 60s
     scrape_timeout: 10s
     static_configs:
-      - targets: ['empowering-love.railway.internal:8080']
+      - targets: ['api.railway.internal:8080']
     metrics_path: '/metrics'
     authorization:
       credentials: 'BMHx7HZo8GA1jlEP1oT8y6-hW7IFBrpz'
 
   # Astro.js сайт с кастомными метриками
-  - job_name: 'astro'
-    scrape_interval: 60s
-    scrape_timeout: 10s
-    static_configs:
-      - targets: ['daloras.com']
-    metrics_path: '/api/metrics'
-    scheme: 'https'
-    params:
-      method: ['POST']
+  # - job_name: 'astro'
+  #   scrape_interval: 60s
+  #   scrape_timeout: 10s
+  #   static_configs:
+  #     - targets: ['daloras.com']
+  #   metrics_path: '/api/metrics'
+  #   scheme: 'https'
+  #   params:
+  #     method: ['POST']
